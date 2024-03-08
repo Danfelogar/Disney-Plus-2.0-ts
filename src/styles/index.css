@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f5f7;
+
+  overflow-x: hidden !important;
+}
+
+
+/* toastify */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast-container.Toastify__toast-container--empty {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
