@@ -33,3 +33,10 @@ export enum RoutesString {
   //Register = "/register",
   NotFound = "/not-found",
 }
+
+export enum TypeMovie {
+  Original = "original",
+  New = "new",
+  Trending = "trending",
+  Recommend = "recommend",
+}

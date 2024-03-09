@@ -40,7 +40,7 @@ export const AppRouter = () => {
           }
         />
         <Route
-          path={RoutesString.Details}
+          path={`${RoutesString.Details}/:id`}
           element={
             <PrivateRoute>
               <DetailsPage />

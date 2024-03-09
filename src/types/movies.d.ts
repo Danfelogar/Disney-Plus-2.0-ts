@@ -1,3 +1,5 @@
+import { TypeMovie } from "../utils";
+
 export interface MovieDetails {
   id: string;
   backgroundImg: string;
@@ -6,7 +8,7 @@ export interface MovieDetails {
   subTitle: string;
   title: string;
   titleImg: string;
-  type: string;
+  type: TypeMovie;
   urlTrailer: string;
 }
 
@@ -15,7 +17,7 @@ export interface Movie {
   cardImg: string;
   title: string;
   subTitle: string;
-  type: string;
+  type: TypeMovie;
 }
 
 export interface MovieFront {
@@ -23,7 +25,7 @@ export interface MovieFront {
   cardImgFront: string;
   titleFront: string;
   subTitleFront: string;
-  typeFront: string;
+  typeFront: TypeMovie;
 }
 
 export interface MovieDetailsFront {
@@ -34,7 +36,7 @@ export interface MovieDetailsFront {
   subTitleFront: string;
   titleFront: string;
   titleImgFront: string;
-  typeFront: string;
+  typeFront: TypeMovie;
   urlTrailerFront: string;
 }
 

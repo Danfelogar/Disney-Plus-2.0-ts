@@ -10,12 +10,18 @@ import {
   where,
 } from "firebase/firestore";
 
-import { MovieState, MovieFront, MovieDetailsFront } from "../../types/movies";
+import {
+  MovieState,
+  MovieFront,
+  MovieDetailsFront,
+  Movie,
+} from "../../types/movies";
 import {
   TypeActions,
   TypeMSMErrorGeneric,
   TypeSlices,
 } from "../../utils/strings";
+import { transformMovieCard } from "../../utils";
 
 const initialState: MovieState = {
   loading: false,
@@ -68,7 +74,10 @@ export const getMovieList = createAsyncThunk(
         title: doc.data().title,
         type: doc.data().type,
       }));
-      console.log({ movies });
+
+      const frontTranslate = transformMovieCard(movies as Movie[]);
+
+      dispatch(setMovieList(frontTranslate));
     } catch (error) {
       const err = error as { message: string };
       if (err.message) {

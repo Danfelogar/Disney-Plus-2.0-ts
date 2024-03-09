@@ -21,3 +21,46 @@ body {
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
+
+/* Carousel */
+.carousel > button {
+  opacity: 0 !important;
+  height: 100% !important;
+  width: 5vw !important;
+  z-index: 1 !important;
+}
+
+.carousel > button:hover {
+  opacity: 1 !important;
+  transition: opacity 0.2s ease 0s !important;
+}
+
+.carousel li.slick-active button:before {
+  color: white !important;
+}
+
+.carousel .slick-list {
+  overflow: initial !important;
+}
+
+.carousel .slick-prev {
+  left: -75px !important;
+}
+
+.carousel .slick-next {
+  right: -75px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+  color: rgb(150, 158, 171) !important;
+}
+
+/* Wrap */
+
+.wrap a:hover {
+  padding: 0 !important;
+  border: 4px solid rgba(249, 249, 249, 0.8) !important;
+  transition-duration: 300ms !important;
+}
+

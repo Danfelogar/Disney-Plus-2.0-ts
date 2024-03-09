@@ -111,7 +111,9 @@ export const RegisterForm = ({
         className="flex w-full justify-center bg-gray-950 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black-500 p-5"
         disabled={loading}
         onClick={onSubmit(loginOrCreateUser)}
-      ></button>
+      >
+        Register
+      </button>
       <hr className="border-t border-gray-400 my-4" />
       <button
         onClick={handleGoogleLogin}
