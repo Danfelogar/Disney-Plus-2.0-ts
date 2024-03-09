@@ -9,8 +9,8 @@ export const AppRouter = () => {
   return (
     <Routes>
       <Route element={<PublicLayout />}>
-        <Route path={RoutesString.Login} element={<LoginPage />} />
         <Route path={RoutesString.Welcome} element={<WelcomePage />} />
+        <Route path={RoutesString.Login} element={<LoginPage />} />
         <Route path="*" element={<NotFound404Page />} />
       </Route>
 
