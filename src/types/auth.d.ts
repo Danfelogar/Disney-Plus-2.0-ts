@@ -1,11 +1,12 @@
 export interface AuthState {
   loading: boolean;
   credentials: {
-    name: string;
+    name?: string;
     email: string;
     photo?: string;
   };
   isLogin: boolean;
+  isRegister: boolean;
 }
 
 export interface LoginCredentials {

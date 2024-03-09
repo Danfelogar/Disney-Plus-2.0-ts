@@ -13,20 +13,12 @@ export const PublicLayout = () => {
         >
           <img src={logDisneyPlus} alt="Disney+" />
         </Link>
-        <div className="flex justify-end">
-          <Link
-            to={RoutesString.Register}
-            className="bg-black bg-opacity-60 px-4 py-2 uppercase tracking-wide border border-gray-100 rounded transition-all duration-200 ease-in-out hover:bg-white text-white hover:text-black hover:border-transparent"
-          >
-            Register
-          </Link>
-          <Link
-            to={RoutesString.Login}
-            className="ml-5 bg-black bg-opacity-60 px-4 py-2 uppercase tracking-wide border border-gray-100 rounded transition-all duration-200 ease-in-out hover:bg-white text-white hover:text-black hover:border-transparent"
-          >
-            Login
-          </Link>
-        </div>
+        <Link
+          to={RoutesString.Login}
+          className="ml-5 bg-black bg-opacity-60 px-4 py-2 uppercase tracking-wide border border-gray-100 rounded transition-all duration-200 ease-in-out hover:bg-white text-white hover:text-black hover:border-transparent"
+        >
+          Login
+        </Link>
       </nav>
       {<Outlet />}
     </div>

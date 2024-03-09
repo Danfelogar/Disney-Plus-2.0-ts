@@ -70,9 +70,9 @@ export const getMovieList = createAsyncThunk(
       }));
       console.log({ movies });
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }
@@ -95,9 +95,9 @@ export const getMovieByID = createAsyncThunk(
         console.log("by id---->", docSnap.data());
       }
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }
@@ -126,9 +126,9 @@ export const getMovieByTitle = createAsyncThunk(
       }));
       console.log({ movies });
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }

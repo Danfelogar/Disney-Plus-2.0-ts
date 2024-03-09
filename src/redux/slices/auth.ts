@@ -28,6 +28,7 @@ const initialState: AuthState = {
   loading: false,
   credentials: INITIAL_CREDENTIALS,
   isLogin: false,
+  isRegister: false,
 };
 
 export const authSlice = createSlice({
@@ -47,11 +48,16 @@ export const authSlice = createSlice({
     setLogout: (state) => {
       state.credentials = INITIAL_CREDENTIALS;
       state.isLogin = false;
+      state.isRegister = false;
+    },
+    setIsRegister: (state, action: PayloadAction<boolean>) => {
+      state.isRegister = action.payload;
     },
   },
 });
 
-export const { setLoading, setCredentials, setLogout } = authSlice.actions;
+export const { setLoading, setCredentials, setLogout, setIsRegister } =
+  authSlice.actions;
 
 export const signIn = createAsyncThunk(
   TypeActions.AuthSignIn,
@@ -65,11 +71,17 @@ export const signIn = createAsyncThunk(
         password
       );
 
-      console.log({ userCredential });
+      dispatch(
+        setCredentials({
+          email: userCredential.user.email as string,
+          name: userCredential.user.displayName as string,
+          photo: userCredential.user.photoURL as string,
+        })
+      );
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }
@@ -91,11 +103,17 @@ export const signUp = createAsyncThunk(
         password
       );
 
-      console.log({ userCredential });
+      dispatch(
+        setCredentials({
+          email: userCredential.user.email as string,
+          name: userCredential.user.displayName as string,
+          photo: userCredential.user.photoURL as string,
+        })
+      );
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }
@@ -112,11 +130,17 @@ export const signWithGoogle = createAsyncThunk(
       dispatch(setLoading(true));
       const userCredential = await signInWithPopup(authGeneric, googleProvider);
 
-      console.log({ userCredential });
+      dispatch(
+        setCredentials({
+          email: userCredential.user.email as string,
+          name: userCredential.user.displayName as string,
+          photo: userCredential.user.photoURL as string,
+        })
+      );
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }
@@ -133,9 +157,9 @@ export const signOut = createAsyncThunk(
       dispatch(setLoading(true));
       dispatch(setLogout());
     } catch (error) {
-      const err = error as { response: { data: { message: string } } };
-      if (err.response) {
-        toast.error(err.response.data.message);
+      const err = error as { message: string };
+      if (err.message) {
+        toast.error(err.message);
       } else {
         toast.error(TypeMSMErrorGeneric.GenericError);
       }

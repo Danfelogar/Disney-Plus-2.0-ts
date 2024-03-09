@@ -30,6 +30,6 @@ export enum RoutesString {
   Details = "/details",
   Login = "/login",
   Welcome = "/welcome",
-  Register = "/register",
+  //Register = "/register",
   NotFound = "/not-found",
 }
