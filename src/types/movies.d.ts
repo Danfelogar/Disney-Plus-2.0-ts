@@ -43,6 +43,6 @@ export interface MovieDetailsFront {
 export interface MovieState {
   loading: boolean;
   movies: MovieFront[] | [];
-  movieDetails: MovieDetailsFront | {};
+  movieDetails: MovieDetailsFront | null;
   movieFilterByTitle: MovieFront[] | [];
 }

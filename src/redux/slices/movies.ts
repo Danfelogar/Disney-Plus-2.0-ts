@@ -15,18 +15,19 @@ import {
   MovieFront,
   MovieDetailsFront,
   Movie,
+  MovieDetails,
 } from "../../types/movies";
 import {
   TypeActions,
   TypeMSMErrorGeneric,
   TypeSlices,
 } from "../../utils/strings";
-import { transformMovieCard } from "../../utils";
+import { transformMovieCard, transformMovieDetails } from "../../utils";
 
 const initialState: MovieState = {
   loading: false,
   movies: [],
-  movieDetails: {},
+  movieDetails: null,
   movieFilterByTitle: [],
 };
 
@@ -46,7 +47,10 @@ export const moviesSlice = createSlice({
         typeFront: movie.typeFront,
       }));
     },
-    setMovieDetails: (state, action: PayloadAction<MovieDetailsFront>) => {
+    setMovieDetails: (
+      state,
+      action: PayloadAction<MovieDetailsFront | null>
+    ) => {
       state.movieDetails = action.payload;
     },
     setMovieFilterByTitle: (state, action: PayloadAction<MovieFront[]>) => {
@@ -100,9 +104,11 @@ export const getMovieByID = createAsyncThunk(
       const docRef = doc(db, "movies", id);
       const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        console.log("by id---->", docSnap.data());
-      }
+      const frontTranslate = transformMovieDetails(
+        docSnap.data() as MovieDetails
+      );
+
+      dispatch(setMovieDetails({ ...frontTranslate, idFront: id }));
     } catch (error) {
       const err = error as { message: string };
       if (err.message) {

@@ -10,6 +10,23 @@ body {
   overflow-x: hidden !important;
 }
 
+/* Main scrollbar styling */
+html::-webkit-scrollbar {
+  width: 7px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #090b13;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
 
 /* toastify */
 .Toastify__toast-container {
@@ -64,3 +81,6 @@ body {
   transition-duration: 300ms !important;
 }
 
+.title-img {
+    -webkit-box-pack: start;
+}

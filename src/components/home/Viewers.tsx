@@ -54,7 +54,7 @@ export const Viewers = () => {
       {arrViewers.map((viewer) => (
         <div
           key={viewer.id}
-          className="group relative pb-[56.25%] rounded-lg cursor-pointer overflow-hidden transition-all duration-250 ease-in-out border-solid border-2 border-gray-300 transform hover:border-opacity-80 hover:shadow-custom hover:scale-105 hover:border-custom shadow-custom2 mx-auto w-full h-full"
+          className="group relative pb-[56.25%] rounded-lg cursor-pointer overflow-hidden transition-all duration-250 ease-in-out border-solid border border-gray-400 transform hover:border-opacity-80 hover:shadow-custom hover:scale-105 hover:border-custom shadow-custom2 mx-auto w-full h-full"
         >
           <img
             src={viewer.img}
