@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Disney + 2.0 App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It is an app to show movies inspired by Disney + made in order to train and give the best possible user experience.
 
-Currently, two official plugins are available:
+The adoption of design patterns focused on custom hooks and a feature-based or modular architecture in our application offers multiple significant advantages. Custom hooks promote code reuse, allowing encapsulation and sharing of state logic among various components, which saves time, reduces code duplication and improves overall productivity.
+The modular architecture allows us to separate the underlying logic from the UI-related code in our components, making the components lighter and facilitating collaboration between developers working on different aspects of the application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Setup Environment
 
-## Expanding the ESLint configuration
+The project was created in react with the help of vite. [ See official docs](https://vitejs.dev/guide/) to set up the environment.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Run
 
-- Configure the top-level `parserOptions` property like this:
+**Environment**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+First you need to create an ".env" file taking as an example the ".env.example" file for the environment configuration, in case you don't have or don't know the credentials, ask for them by mail.
+
+**Install dependencies**
+
+```
+yarn
+```
+**Run Development environment**
+
+```
+yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🛠 Tech and Libraries
+
+- [React](https://react.dev/learn): Library js
+- [TypeScript](https://www.typescriptlang.org/): Application typing stronger
+- [tailwindcss](https://tailwindcss.com/docs/installation):CSS framework that takes a utility-first approach, allowing developers to build layouts quickly without the need to write custom CSS
+- [React Router](https://reactrouter.com/en/main/start/tutorial): Routing and navigation
+- [Redux Toolkit](https://redux-toolkit.js.org/Í): Data storage efficient Redux
+- [React Hook Form](https://react-hook-form.com/get-started): Build scalable and performant forms
+- [yup](https://www.npmjs.com/package/yup): Object schema validation in JavaScript
+- [Firebase](https://firebase.google.com/docs/web/setup?hl=es): Servicio en la nube para gestionar login, registro y las tablas y estructura de datos
+- [Sonner](https://sonner.emilkowal.ski/getting-started): Alert manager with user-friendly interface
+
+### Web Screenshots
+
+|                  |                           Web                           |                             Mobile                         |
+| :--------------: | :-----------------------------------------------------: | :--------------------------------------------------------: |
+|  Welcome Screen  | ![](src/assets/screenshots/Screenshot_welcome_web.png)  | ![](src/assets/screenshots/Screenshot_welcome_mobile.png)  |
+|   Login Screen   | ![](src/assets/screenshots/Screenshot_login_web.png)    | ![](src/assets/screenshots/Screenshot_login_mobile.png)    |
+| Register Screen  | ![](src/assets/screenshots/Screenshot_register_web.png) | ![](src/assets/screenshots/Screenshot_register_mobile.png) |
+|   Home Screen    | ![](src/assets/screenshots/Screenshot_home_web.png)     | ![](src/assets/screenshots/Screenshot_home_mobile.png)     |
+|  Details Screen  | ![](src/assets/screenshots/Screenshot_details_web.png)  | ![](src/assets/screenshots/Screenshot_details_mobile.png)  |
+|   Modal Screen   | ![](src/assets/screenshots/Screenshot_modal_web.png)    | ![](src/assets/screenshots/Screenshot_modal_mobile.png)    |
+
+# Link-video-demo-app
+
+[![Alt text](https://img.youtube.com/vi/9fZCRcARte8/0.jpg)](https://www.youtube.com/watch?v=9fZCRcARte8)

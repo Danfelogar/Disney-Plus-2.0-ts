@@ -6,7 +6,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import { rootReducer } from "./rootReducer";
 import { NODE_ENV, TypeEnvironment, TypeSlices } from "../utils";
 
-const persistConfig = {
+export const persistConfig = {
   key: TypeSlices.Root,
   version: 1,
   storage,
