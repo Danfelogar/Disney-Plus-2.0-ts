@@ -4,6 +4,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import logDisneyPlus from "../../assets/images/logo.svg";
 import { RoutesString } from "../../utils";
 import { usePrivateLayout } from "../../hooks";
+import { SearchBar } from "..";
 
 export const PrivateLayout = () => {
   const {
@@ -20,12 +21,15 @@ export const PrivateLayout = () => {
   return (
     <div>
       <nav className="fixed top-0 left-0 right-0 h-18 bg-[#090b13] flex justify-between items-center px-9 space-x-8 z-10 py-2">
-        <Link
-          to={RoutesString.Home}
-          className="inline-block min-w-20 w-20 h-17 mt-1 max-h-17 font-sans text-transparent"
-        >
-          <img src={logDisneyPlus} alt="Disney+" />
-        </Link>
+        <div className="flex items-end gap-4">
+          <Link
+            to={RoutesString.Home}
+            className="hidden sm:inline-block min-w-20 w-20 h-17 mt-1 max-h-17 font-sans text-transparent"
+          >
+            <img src={logDisneyPlus} alt="Disney+" />
+          </Link>
+          <SearchBar />
+        </div>
         <div className="flex items-center">
           <div className="hidden md:flex items-center justify-end h-full m-0 p-0 relative mr-auto ml-6">
             {arrMenu.map((item) => (

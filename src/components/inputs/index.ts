@@ -1,2 +1,2 @@
 export * from "./InputGeneric";
-export * from "./InputText";
+export * from "./SearchBar";

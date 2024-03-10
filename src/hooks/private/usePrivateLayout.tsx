@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch, RootState } from "../../redux/store";
 import HomeImg from "../../assets/images/home-icon.svg";
-import SearchImg from "../../assets/images/search-icon.svg";
-import WatchListImg from "../../assets/images/watchlist-icon.svg";
 import OriginalsImg from "../../assets/images/original-icon.svg";
 import MoviesImg from "../../assets/images/movie-icon.svg";
 import SeriesImg from "../../assets/images/series-icon.svg";
@@ -34,28 +32,19 @@ export const usePrivateLayout = () => {
       name: "Home",
       img: HomeImg,
     },
+
     {
       id: 2,
-      name: "Search",
-      img: SearchImg,
-    },
-    {
-      id: 3,
-      name: "Watch List",
-      img: WatchListImg,
-    },
-    {
-      id: 4,
       name: "Originals",
       img: OriginalsImg,
     },
     {
-      id: 5,
+      id: 3,
       name: "Movies",
       img: MoviesImg,
     },
     {
-      id: 6,
+      id: 4,
       name: "Series",
       img: SeriesImg,
     },

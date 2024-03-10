@@ -53,7 +53,10 @@ export const moviesSlice = createSlice({
     ) => {
       state.movieDetails = action.payload;
     },
-    setMovieFilterByTitle: (state, action: PayloadAction<MovieFront[]>) => {
+    setMovieFilterByTitle: (
+      state,
+      action: PayloadAction<MovieFront[] | []>
+    ) => {
       state.movieFilterByTitle = action.payload;
     },
   },
@@ -139,7 +142,10 @@ export const getMovieByTitle = createAsyncThunk(
         title: doc.data().title,
         type: doc.data().type,
       }));
-      console.log({ movies });
+
+      const frontTranslate = transformMovieCard(movies as Movie[]);
+
+      dispatch(setMovieFilterByTitle(frontTranslate));
     } catch (error) {
       const err = error as { message: string };
       if (err.message) {
